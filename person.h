@@ -10,5 +10,5 @@ public:
     // virtual Phenotype getPhenotype()=0;
     virtual ~Person() {}
 };
-//
+//////
 #endif // PERSON_H
