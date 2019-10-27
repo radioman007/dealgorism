@@ -32,8 +32,8 @@ SimplePerson* SimplePerson::mutatePerson(SimplePerson &A,SimplePerson &B)
     std::vector<double> newPerson;
     for (int i=0;i<DNK.size();i++)
     {
-        double mutantGene = DNK[i].mutate(aDNK[i],bDNK[i]);
-        newPerson.push_back(mutantGene);
+      // double mutantGene = DNK[i].mutate();
+    //    newPerson.push_back(mutantGene);
     }
     SimplePerson* mutantPerson = new SimplePerson(newPerson);
     return mutantPerson;

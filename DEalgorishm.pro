@@ -7,7 +7,8 @@ SOURCES += main.cpp \
     gene.cpp \
     simplegene.cpp \
     simpleperson.cpp \
-    populationforbasicdealgo.cpp
+    populationforbasicdealgo.cpp \
+    hypothesisgene.cpp
 
 HEADERS += \
     gene.h \
@@ -15,4 +16,5 @@ HEADERS += \
     person.h \
     simpleperson.h \
     population.h \
-    populationforbasicdealgo.h
+    populationforbasicdealgo.h \
+    hypothesisgene.h

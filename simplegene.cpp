@@ -2,7 +2,8 @@
 
 SimpleGene::SimpleGene()
 {
-
+value = 1;
+mutationForce = 0.1;
 }
 
 SimpleGene::SimpleGene(double val):Gene(val)
@@ -10,13 +11,14 @@ SimpleGene::SimpleGene(double val):Gene(val)
     mutationForce = 0.1;
 }
 
-SimpleGene::SimpleGene(double val, double force):Gene(val)
+SimpleGene::SimpleGene(double val, double force):Gene(val), mutationForce(force) {}
+
+// устанавливаем новое значение value
+// умножаем value на случаеное число от -1 до 1 и на силу матации
+void SimpleGene::mutate()
 {
-    mutationForce = force;
+srand(time(NULL));
+value *= mutationForce * ((rand()%100)/((double)50)-1);
 }
 
-double SimpleGene::mutate(SimpleGene aGene,SimpleGene bGene)// не известно че по агрументом и как он вообще работает
-{
-    double newValue = this->getValue()+mutationForce*(aGene.getValue()+bGene.getValue());
-    return newValue;
-}
+
