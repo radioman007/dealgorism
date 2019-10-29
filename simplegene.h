@@ -1,10 +1,9 @@
 #ifndef SIMPLEGENE_H
 #define SIMPLEGENE_H
 #include "gene.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <iostream>
 using namespace std;
+
 class SimpleGene: public Gene
 {
 private:
@@ -12,11 +11,8 @@ private:
 public:
     SimpleGene();
     SimpleGene(double val);
-    double getMutationForce() {return mutationForce;}
-    void setMutationForce(double force) {mutationForce=force;}
     SimpleGene(double val, double force);
-    void mutate();
-    ~SimpleGene() {}
+    double mutate(Gene* aGene,Gene* bGene);
 };
 
 #endif // SIMPLEGENE_H

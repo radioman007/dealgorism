@@ -3,16 +3,15 @@
 
 class Gene
 {
-    protected:
+private:
     double value;
 public:
-    Gene() {}
+    Gene();
     Gene(double val);
     double getValue() const;
     void setValue(double val);
-    virtual void mutate() = 0;
-    double getValueWithMutate();
-    virtual ~Gene() {}
+    virtual double mutate(Gene* aGene,Gene* bGene) = 0;
+    virtual ~Gene();
 };
 
 #endif // GENE_H

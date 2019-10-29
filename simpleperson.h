@@ -1,21 +1,24 @@
 #ifndef SIMPLEPERSON_H
 #define SIMPLEPERSON_H
 #include "person.h"
-#include "simplegene.h"
 #include <vector>
+#include <math.h>
+#include "gene.h"
+#include "simplegene.h"
+using namespace std;
 
 class SimplePerson: public Person
 {
 private:
-   std::vector<SimpleGene> DNK;
+    std::vector<Gene*> DNK;
 public:
     SimplePerson();
     SimplePerson(std::vector<double> &geneArray);
-    SimplePerson* mutatePerson(SimplePerson &A, SimplePerson &B);
-    void crossover(Person* person);
+    SimplePerson(vector<Gene*> genes);
+    Person* mutate(Person* A, Person* B);
     double fitness();
-    std::vector<SimpleGene> getDNK() const;
-    void setDNK(const std::vector<SimpleGene> &value);
+    std::vector<Gene*> getDNK() const;
+    void setDNK(const std::vector<Gene*> &value);
 };
 
 #endif // SIMPLEPERSON_H

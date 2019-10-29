@@ -2,23 +2,22 @@
 
 SimpleGene::SimpleGene()
 {
-value = 1;
-mutationForce = 0.1;
+this->setValue(1);
+mutationForce = 1;
 }
 
 SimpleGene::SimpleGene(double val):Gene(val)
 {
-    mutationForce = 0.1;
+    mutationForce = 1;
 }
 
-SimpleGene::SimpleGene(double val, double force):Gene(val), mutationForce(force) {}
-
-// устанавливаем новое значение value
-// умножаем value на случаеное число от -1 до 1 и на силу матации
-void SimpleGene::mutate()
+SimpleGene::SimpleGene(double val, double force):Gene(val)
 {
-srand(time(NULL));
-value *= mutationForce * ((rand()%100)/((double)50)-1);
+    mutationForce = force;
 }
 
-
+double SimpleGene::mutate(Gene* aGene,Gene* bGene)
+{
+    double newValue = this->getValue()+mutationForce*(aGene->getValue()-bGene->getValue());
+    return newValue;
+}

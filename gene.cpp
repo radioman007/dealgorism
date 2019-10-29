@@ -1,10 +1,5 @@
 #include "gene.h"
 
-Gene::Gene(double val)
-{
-    value = val;
-}
-
 double Gene::getValue() const
 {
     return value;
@@ -15,9 +10,17 @@ void Gene::setValue(double val)
     value = val;
 }
 
-double Gene::getValueWithMutate()
+Gene::Gene()
 {
-    this->mutate();
-    return this->getValue();
+value =1;
 }
 
+Gene::Gene(double val)
+{
+    value = val;
+}
+
+Gene::~Gene()
+{
+
+}
